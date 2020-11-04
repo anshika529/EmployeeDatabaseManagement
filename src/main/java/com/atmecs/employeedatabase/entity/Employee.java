@@ -1,14 +1,23 @@
 package com.atmecs.employeedatabase.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "employee")
 public class Employee {
 	private String name;
 
 	
 	private int emp_id;
 private EmployeeDetails empdetails;
+
+@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id")
+
 
 	public EmployeeDetails getEmpdetails() {
 	return empdetails;

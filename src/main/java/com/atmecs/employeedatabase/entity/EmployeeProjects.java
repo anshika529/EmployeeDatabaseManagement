@@ -1,8 +1,10 @@
 package com.atmecs.employeedatabase.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "projects")
 public class EmployeeProjects {
 	private int project_id;
 private String name;
