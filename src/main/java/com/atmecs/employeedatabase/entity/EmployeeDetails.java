@@ -1,5 +1,8 @@
 package com.atmecs.employeedatabase.entity;
 
+import javax.persistence.Entity;
+
+@Entity
 public class EmployeeDetails {
 	private int id;
 	private int salary;
@@ -32,8 +35,8 @@ public class EmployeeDetails {
 		return experience;
 	}
 
-	public void setExperience(int experience) {
-		this.experience = experience;
+	public void setExperience(String string) {
+		this.experience = string;
 	}
 
 }
