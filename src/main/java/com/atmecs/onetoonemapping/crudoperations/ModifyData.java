@@ -5,8 +5,8 @@ import java.util.Scanner;
 import org.hibernate.Session;
 import org.hibernate.SessionException;
 
-import com.atmecs.onetoonemapping.entity.Users;
-import com.atmecs.onetoonemapping.util.HibernateUtil;
+import com.atmecs.employeedatabase.entity.Employee;
+import com.atmecs.employeedatabase.util.HibernateUtil;
 
 
 
@@ -17,12 +17,12 @@ public class ModifyData {
 		try {
 			session.beginTransaction();
 			System.out.println("Enter id to modify record:");
-			Users user = (Users) session.get(Users.class, sc.nextInt());
+			Employee emp = (Employee) session.get(Employee.class, sc.nextInt());
 
-			if (user != null) {
+			if (emp != null) {
 				System.out.println("Enter the new email to update");
-			//	user.setEmail(sc.next());
-				session.saveOrUpdate(user);
+				emp.setEmail(sc.next());
+				session.saveOrUpdate(emp);
 
 				session.getTransaction().commit();
 				System.out.println("Record updated successfully..!!");

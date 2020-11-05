@@ -5,8 +5,8 @@ import java.util.Scanner;
 import org.hibernate.Session;
 import org.hibernate.SessionException;
 
-import com.atmecs.onetoonemapping.entity.Users;
-import com.atmecs.onetoonemapping.util.HibernateUtil;
+import com.atmecs.employeedatabase.entity.Employee;
+import com.atmecs.employeedatabase.util.HibernateUtil;
 
 
 
@@ -17,10 +17,10 @@ public class DeleteData {
 		try {
 			session.beginTransaction();
 			System.out.println("Enter id to delete record:");
-			Users user = (Users) session.get(Users.class, sc.nextInt());
+			Employee emp = (Employee) session.get(Employee.class, sc.nextInt());
 
-			if (user != null) {
-				session.delete(user);
+			if (emp != null) {
+				session.delete(emp);
 				session.getTransaction().commit();
 				System.out.println("Record deleted successfully..!!");
 			} else {

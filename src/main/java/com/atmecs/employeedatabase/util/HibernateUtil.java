@@ -7,8 +7,8 @@ import org.hibernate.cfg.Configuration;
 
 import com.atmecs.employeedatabase.entity.Employee;
 import com.atmecs.employeedatabase.entity.EmployeeDetails;
-import com.atmecs.employeedatabase.entity.EmployeeProjects;
-import com.atmecs.employeedatabase.entity.EmployeeSkills;
+import com.atmecs.employeedatabase.entity.Projects;
+import com.atmecs.employeedatabase.entity.Skills;
 
 public class HibernateUtil {
 	public static final SessionFactory sessionFactory;
@@ -18,8 +18,8 @@ public class HibernateUtil {
 			Configuration config = new Configuration();
 			config.addAnnotatedClass(Employee.class);
 			config.addAnnotatedClass(EmployeeDetails.class);
-			config.addAnnotatedClass(EmployeeSkills.class);
-			config.addAnnotatedClass(EmployeeProjects.class);
+			 config.addAnnotatedClass(Skills.class);
+			config.addAnnotatedClass(Projects.class);
 			config.configure();
 			sessionFactory = config.buildSessionFactory();
 		} catch (Throwable e) {

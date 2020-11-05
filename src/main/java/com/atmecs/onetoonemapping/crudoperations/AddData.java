@@ -19,17 +19,26 @@ public class AddData {
 			System.out.println("Enter the number of records you want to add");
 			int number = sc.nextInt();
 			for (int i = 1; i <= number; i++) {
-				Employee emp=new Employee();
-				System.out.println("Enter Employee Details");
-				System.out.println("Enter id:");
-				emp.setId(sc.nextInt());
-				System.out.println("Enter User Name:");
-				emp.setName(sc.next());
+				Employee emp = new Employee();
+				System.out.println("Enter employee id:");
+				emp.setEmp_id(sc.nextInt());
+				System.out.println("Enter Employee Name:");
+				emp.setEmployee_name(sc.next());
+				System.out.println("Enter Email:");
+				emp.setEmail(sc.next());
 				
-				EmployeeDetails empdetail=new EmployeeDetails();
-				System.out.println("Email :");
+				EmployeeDetails empdetail = new EmployeeDetails();
+				System.out.println("Enter Employee Details");
+				System.out.println("Enter employee id:");
+				empdetail.setEmp_detail_id(sc.nextInt());
+				System.out.println("Enter Experience :");
 				empdetail.setExperience(sc.next());
-				emp.setEmpdetails(empdetail);
+				System.out.println("Enter Salary :");
+				empdetail.setSalary(sc.next());
+				System.out.println("Enter Hobby :");
+				empdetail.setHobby(sc.next());
+				
+				emp.setEmployeedetails(empdetail);
 				session.persist(emp);
 				session.getTransaction().commit();
 				System.out.println("Record successfully added");
