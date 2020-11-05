@@ -1,4 +1,4 @@
-package com.atmecs.onetoonemapping.crudoperations;
+package com.atmecs.employeedatabase.crudoperations;
 
 import java.util.Scanner;
 
